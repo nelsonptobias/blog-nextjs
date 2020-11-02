@@ -5,6 +5,7 @@ import { getSortedPostsData } from '../lib/posts'
 import Link from 'next/link'
 import Date from '../components/date'
 
+
 export default function Home({ allPostsData }) {
   return (
     <Layout home>
@@ -31,6 +32,11 @@ export default function Home({ allPostsData }) {
           ))}
         </ul>
       </section>
+      <section>
+        <p>Pagina feita pra armezenar preços</p>
+        <Link href={'/lista/colocador'}>Lista</Link>
+      </section>
+
     </Layout>
   )
 }

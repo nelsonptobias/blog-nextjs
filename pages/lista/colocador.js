@@ -3,7 +3,7 @@ import Layout from '../../components/layout'
 import { useState, useEffect } from 'react'
 import { Button, Input, Text } from "@chakra-ui/core"
 import Lista from "../../components/list"
-import { Box } from "@chakra-ui/core"
+import { Box, Flex } from "@chakra-ui/core"
 
 import * as crypto from 'crypto'
 
@@ -87,9 +87,11 @@ export default function Colocador() {
                     <Button colorScheme="teal" onClick={Pesquisar} >Button</Button>
                 </form>
             </Box>
-            <Box w="100%" p={4} color="black" align="center">
-                <Lista lista={dadosMostrados} pesquisar={Pesquisar} />
-            </Box>
+            <Flex align="center">
+                <Box w="100%" p={4} color="black">
+                    <Lista lista={dadosMostrados} pesquisar={Pesquisar} />
+                </Box>
+            </Flex>
             <h2>
                 <Link href="/">
                     <a>Back to home</a>

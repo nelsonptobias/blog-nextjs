@@ -1,4 +1,4 @@
-import { List, Stat, StatNumber, Text, Image, ListItem, StatHelpText, Button, Flex, Box, SimpleGrid } from "@chakra-ui/core"
+import { List, Stat, StatNumber, Text, Image, ListItem, StatHelpText, Button, Flex, Box, SimpleGrid, Link  } from "@chakra-ui/core"
 
 export default function ListaProdutos({ lista, pesquisar }) {
 
@@ -10,7 +10,9 @@ export default function ListaProdutos({ lista, pesquisar }) {
                     <Text fontSize="md" align='center' >Preco com desconto no boleto</Text>
                     <Flex align="flex-end">
                         <Image src={produto.img} alt="produto" />
-
+                        <Link href={produto.url} isExternal>
+                            Link
+                        </Link>
                         <Button colorScheme="blue" onClick={(e) => pesquisar(e, produto.url)}  >Button</Button>
 
                         <Box display='flex' flexDirection='column' flexWrap='wrap' height='400px' >

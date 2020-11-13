@@ -7,7 +7,7 @@ export default function ListaProdutos({ lista, pesquisar }) {
         lista.map((produto) => (
           <ListItem key={produto.id}>
             <Box display="flex" flexDirection={{ lg: "row", md: "column" }}>
-              <Box display="flex" flex={1} flexDirection="column" alignItems="center" border="solid 1px #000">
+              <Box display="flex" flex={1} flexDirection="column" alignItems="center" border="solid 1px #000" borderRadius="lg">
                 <Text fontSize="md">{produto.nomeProduto}</Text>
                 <Image src={produto.img} alt="produto" />
                 <Link href={produto.url} isExternal>
@@ -17,14 +17,14 @@ export default function ListaProdutos({ lista, pesquisar }) {
                   Button
                 </Button>
               </Box>
-              <Flex flex={2} flexDirection="column" border="solid 1px #000">
+              <Flex flex={2} flexDirection="column" border="solid 1px #000" borderRadius="lg">
                 <Text fontSize="md" as="p" align="center">
                   Preco com desconto no boleto
                 </Text>
-                <Box alignItems="flex-start" display="flex" flex={1} flexDirection="column" border="solid 1px #000">
+                <Box bg="#ECA611" alignItems="flex-start" display="flex" flex={1} flexDirection="column">
                   <StatGroup justifyContent="flex-start" flexDirection="column" height={{ lg: 450, md: "auto" }}>
                     {produto.consultas.map((consulta, index) => (
-                      <Stat borderWidth="1px" borderStyle="solid" key={consulta.id} height={150}>
+                      <Stat bg="red.200" borderWidth="1px" borderStyle="solid" key={consulta.id} height={150} borderRadius="lg">
                         <StatNumber>{consulta.preco}</StatNumber>
                         <StatHelpText>{consulta.data}</StatHelpText>
                       </Stat>
